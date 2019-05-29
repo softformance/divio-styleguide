@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
-from django.core.urlresolvers import reverse, NoReverseMatch
+try:
+    from django.urls import reverse, NoReverseMatch
+except ImportError:
+    # Django <= 1.10
+    from django.core.urlresolvers import reverse, NoReverseMatch
 from django.utils.translation import ugettext_lazy as _
 
 try:
